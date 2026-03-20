@@ -9,7 +9,10 @@ void my_sum(char character, int count, ...) {
     switch (character)
     {
     case 'S':
-        for(int i=0; i<count; i++) printf("%s ", va_arg(ap, char*));
+        for(int i=0; i<count; i++) {
+            if(i>0) printf(" ");
+            printf("%s", va_arg(ap, char*));
+        }
         printf("\n");
         break;
     case 'C':
